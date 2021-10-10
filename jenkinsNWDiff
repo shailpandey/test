@@ -1,4 +1,5 @@
 node {
+
     stage('SCM') {
     	echo 'Gathering code from version control'
 	checkout scm
@@ -7,6 +8,16 @@ node {
         echo 'Building....'
         echo 'Building New Feature'
     }
+   
+    stage('getfilelist')
+{
+// file inputfile = new file("https://github.com/shailpandey/test\*.tf")
+ new File('.').eachFileResource(Files){
+ if(it.name.endswith('.tf')){
+ println it}
+ }
+}
+
     stage('Test') {
         echo 'Testing....'
     }
