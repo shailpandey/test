@@ -22,11 +22,11 @@ node {
         stage('getfilelist')
 {
 echo 'checking for files....'
-
-      new File("https://github.com/shailpandey/test/driff2.tf").eachLine {  
-         line -> println "line : $line"; 
+files = findFiles(glob: '*.tf')
+      //new File("https://github.com/shailpandey/test/driff2.tf").eachLine {  
+     //    line -> println "line : $line"; 
       
-   } 
+   //} 
 }
 
 
