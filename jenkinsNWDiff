@@ -23,7 +23,7 @@ node {
 echo 'checking for files....'
 
 static void main(String[] args) { 
-      new File("https://github.com/shailpandey/test/*.tf").eachLine {  
+      new File("https://github.com/shailpandey/test/driff2.tf").eachLine {  
          line -> println "line : $line"; 
       } 
    } 
