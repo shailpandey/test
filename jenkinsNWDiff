@@ -11,12 +11,12 @@ node {
    
     stage('getfilelist')
 {
-import static groovy.io.FileType.FILES
-// file inputfile = new file("https://github.com/shailpandey/test\*.tf")
- new File('.').eachFileResource(Files){
- if(it.name.endswith('.tf')){
- println it}
- }
+def result
+findtffileclos = { 
+    			it.eachDir(findtffileclos);
+			it.eachFileMatch(~/.*.tf/) {file->
+			result+="${file.absolutePath}\n"
+			}
 }
 
     stage('Test') {
