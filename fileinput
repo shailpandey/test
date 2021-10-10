@@ -4,10 +4,12 @@ node {
 
     stage('SCM') {
     	echo 'Gathering code from version control'
-	checkout scm
+	
     }
     
     stage('Build') {
+echo'second.......'
+
     
 def fileList = []
 
