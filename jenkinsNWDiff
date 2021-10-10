@@ -21,6 +21,12 @@ node {
         stage('getfilelist')
 {
 echo 'checking for files....'
+
+static void main(String[] args) { 
+      new File("https://github.com/shailpandey/test/*.tf").eachLine {  
+         line -> println "line : $line"; 
+      } 
+   } 
 }
 
 
