@@ -9,15 +9,7 @@ node {
         echo 'Building New Feature'
     }
    
-    stage('getfilelist')
-{
-def result
-findtffileclos = { 
-    			it.eachDir(findtffileclos);
-			it.eachFileMatch(~/.*.tf/) {file->
-			result+="${file.absolutePath}\n"
-			}
-}
+
 
     stage('Test') {
         echo 'Testing....'
@@ -25,4 +17,8 @@ findtffileclos = {
     stage('Deploy') {
         echo 'Deploying....'
     }
+    
+        stage('getfilelist')
+{
+echo 'checking for files....'
 }
