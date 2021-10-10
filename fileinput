@@ -1,27 +1,20 @@
 
-pipeline {
-    agent any
-    stages {
-           stage('Parallel Stage') {
-              parallel {
-                stage('windows script') {
-                    agent {
-                        label "windows"
-                    }
-                    steps {
-                        	echo "Running in windows agent"
-		bat 'echo %PATH%'
-                    }
-                }
-                stage('linux script') {
-                    agent {
-                        label "linux"
-                    }
-                    steps {
-                       sh "Running in Linux agent"
-                    }
-                }
-             }
-        }
+node {
+
+
+    stage('SCM') {
+    	echo 'Gathering code from version control'
+	checkout scm
     }
+    
+    stage('Build') {
+    
+def fileList = []
+
+def dir = new File("https://github.com/shailpandey/test/*")
+dir.eachFileRecurse (FileType.FILES) { file ->
+  fileList << file
+}
+        
+    
 }
