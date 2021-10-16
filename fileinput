@@ -1,5 +1,7 @@
+import groovy.io.FileType
+
 pipeline {
- import groovy.io.FileType
+ 
     
        stage('write') {
            
